@@ -1,0 +1,51 @@
+Cucumber Technologies:
+What is Gherkin?
+It is a Business Readable , Domain Specific Language that lets you describe software's behaviour
+Example:Pop up message is displayed when buttons are clicked and errors are gone
+Devloper:Pop up message is displayed and errors are gone on button clicked
+QA- Pop up message is displayed - only when buttons are clicked and errors are gone
+
+
+Keywords in Cucumber: Scenario,Feature,Feature File,Scenario outline , Step Definition
+
+Scenario :
+In Cucumber Testcases are represnted as Scenarios
+Scenario contain Steps which are equivalent to test steps and use the following keywords(Gherkin syntax) to denote them: Given,When,Then,But,and And (case sensitive).
+>Given:preconditions are mentioned in the Given Keyword
+>When: The purpose of When steps is to describe the user action
+>Then: The Purpose of Then Steps is to observe the expected output. The observations should be related to business value/ benefit of your Feature description.
+
+When we specify a business requirement, sometimes there are mutiple pre-conditions,user actions, and expected outcomes
+
+we are going to add one more scenario and will use the And and But keywords:
+>And: This is  used for statements that are addition to the previous steps and represent positive statements
+>But: This is used for staments that are in addition to previous steps and represent negative statements 
+
+
+Scenario: Make Minimum Due Payment
+>Given user is on Pay Credit page
+>When user fills all details and select Minimum amount option
+>And User clicks on Pay button
+Then Credit Card confirmation page is displayed
+And if reference number is displayed
+But error message is displayed
+
+When we specify a business requirement, sometimes there are multpile pre-conditons,user actions and expected outcomes
+
+Feature and Feature File:
+Feature represents Business requirement
+Feature File acts as a Test which consist of all Scenarios
+
+In Cucumber,Feature file contains Scenarios. We can simply create feature file with .feature extension
+Scenarios belonging to specific area of application will be grouped into one Feature file
+
+Feature file should contain either Scenario oe Scenario outline. The naming conventions for Feature file should be lowercase with feature extension
+
+Feature: Credit Card payment
+Scenario: Make Minmum payment
+Given: User is on pay credit page
+Then user fills details and select Minimum amount option
+
+And User clicks on pay button
+Then Credit Card confirmation page is displayed
+
